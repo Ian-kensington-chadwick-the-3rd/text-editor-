@@ -37,7 +37,6 @@
   "display": "standalone",
   "start_url": "/",
   "description": "a text editor that is used in browser that can be downloaded as pwa",
-  "backround_color": "#ffffff",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff"
+  "background_color": "#7eb4e2",
+  "theme_color": "#7eb4e2"
 }

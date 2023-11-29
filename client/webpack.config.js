@@ -10,9 +10,8 @@ module.exports = () => {
   return {
     mode: 'development',
     entry: {
-      main: './src/js/index.js',
-      install: './src/js/install.js',
-      header: './src/js/header.js',
+      main: '/src/js/index.js',
+      install: '/src/js/install.js',
     },
     output: {
       filename: '[name].bundle.js',
@@ -23,25 +22,26 @@ module.exports = () => {
         title: 'Client Server',
         template: './index.html',
       }),
-      new GenerateSW(),
+      
+      // new GenerateSW(),
 
       new InjectManifest({
-        swSrc: './src-sw.js',
+        swSrc: '/src-sw.js',
         swDest: 'src-sw.js',
       }),
       new WebpackPwaManifest({
+        inject: true,
+        fingerprints: false,
         name: 'text-editor',
         short_name: 'te',
         description: 'a text editor that is used in browser that can be downloaded as pwa',
-        backround_color: '#ffffff',
-        crossorigin: 'use-credentials',
-        background_color: '#ffffff',
-        theme_color: '#ffffff',
+        background_color: '#7eb4e2',
+        theme_color: '#7eb4e2',
         start_url: '/',
         publicPath: '/',
         icons: [
           {
-           src: path.resolve('./src/images/logo.png'),
+           src: path.resolve('src/images/logo.png'),
            sizes: [96, 128, 192, 256, 384, 512],
            destination: path.join('assets', 'icons'),
           },
